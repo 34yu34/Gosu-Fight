@@ -9,4 +9,9 @@ class V
     @y = y
   end
 
+  def +(pts)
+    if pts === V
+      
+    end
+  end
 end

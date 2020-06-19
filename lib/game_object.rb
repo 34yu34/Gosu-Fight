@@ -9,6 +9,7 @@ class GameObject
 
   def draw
     @transform.draw do
+      
     end
   end
 end

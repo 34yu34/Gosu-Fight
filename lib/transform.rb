@@ -5,7 +5,8 @@ class Transform
 
 
   def initialize
-    @pos
+    @pos =
+
   end
 
   def draw(&block)
