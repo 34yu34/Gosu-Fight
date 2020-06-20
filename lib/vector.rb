@@ -1,5 +1,4 @@
-
-
+# frozen_string_literal: true
 
 class V
   attr_accessor :x, :y
@@ -10,8 +9,30 @@ class V
   end
 
   def +(pts)
-    if pts === V
-      
+    operate(pts, :+)
+  end
+
+  def -(pts)
+    operate(pts, :-)
+  end
+
+  def /(pts)
+    operate(pts, :/)
+  end
+
+  def *(pts)
+    operate(pts, :*)
+  end
+
+  def %(pts)
+    operate(pts, :%)
+  end
+
+  def operate(pt, op)
+    if pt === V
+      V(@x.send(op, pt.x), @y.send(op, pt.y))
+    else
+      V(@x.send(op, pt), @y.send(op, pt))
     end
   end
 end

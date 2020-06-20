@@ -1,4 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'game_window'
 
-
-GameWindow.new().show()
+GameWindow.new.show
