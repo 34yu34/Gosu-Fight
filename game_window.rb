@@ -3,8 +3,11 @@
 require 'gosu'
 
 require_relative 'lib/game_object'
-require_relative 'lib/square'
+require_relative 'lib/triangle'
 require_relative 'lib/vector'
+require_relative 'lib/mouse'
+
+require_relative 'game/board'
 
 include Gosu
 
@@ -15,16 +18,18 @@ class GameWindow < Window
   def initialize
     super WIDTH, HEIGHT
     self.caption = 'Test'
-
-    @obj = GameObject.new
-    @obj.transform.pos = V.new(100, 100)
-    @obj.transform.scale = V.new(50, 50)
-    @obj.shape = Square.new(Color::RED)
+    # self.fullscreen = true
+    @mouse = Mouse.new
+    @board = Board.new
+    @board.center(width, height)
   end
 
-  def update; end
+  def update
+    @mouse.update(mouse_x, mouse_y)
+  end
 
   def draw
-    @obj.draw
+    @board.draw
+    @mouse.draw
   end
 end

@@ -9,7 +9,7 @@ class Square
     @color = color
   end
 
-  def draw
+  def render
     draw_quad(0.5, 0.5, @color,
               0.5, -0.5, @color,
               -0.5, -0.5, @color,
